@@ -300,7 +300,7 @@ const Phase1: React.FC<Props> = ({
                 : (tangent.confidence ?? 100) > 20
                 ? "orange"
                 : "red",
-            borderWidth: (tangent.confidence ?? 0) > 40 ? "2px" : "4px",
+            borderWidth: (tangent.confidence ?? 100) > 40 ? "2px" : "4px",
             borderRadius: "20px",
           }}
         >
@@ -310,7 +310,7 @@ const Phase1: React.FC<Props> = ({
               color="primary"
               variant="contained"
               size="small"
-              sx={{ block: (tangent.confidence ?? 0) < 40 ? "none" : "block" }}
+              sx={{ display: (tangent.confidence ?? 0) < 40 ? "none" : "block" }}
               onClick={() => openDialog(tangent.content)}
             >
               指摘を見る
