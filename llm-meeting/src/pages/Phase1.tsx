@@ -173,7 +173,7 @@ const Phase1: React.FC<Props> = ({ setPhase, limitTime, agenda, goal, setMeeting
       const diffTime = meetingEndTime.current.getTime() - Date.now();
       setMeetingTime(Math.floor(diffTime / 1000));
       meetingTimeRef.current = Math.floor(diffTime / 1000);
-      if (diffTime % 30 === 0) {
+      if (diffTime % 30 === 0 && meetingContentRef.current.length) {
         fetchActionItem();
         fetchDispute();
         fetchTangent();
