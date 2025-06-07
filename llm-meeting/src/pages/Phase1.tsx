@@ -310,7 +310,7 @@ const Phase1: React.FC<Props> = ({
               color="primary"
               variant="contained"
               size="small"
-              sx={{ display: (tangent.confidence ?? 0) < 40 ? "none" : "block" }}
+              sx={{ display: (tangent.confidence ?? 0) > 40 ? "none" : "block" }}
               onClick={() => openDialog(tangent.content)}
             >
               指摘を見る
