@@ -3,6 +3,7 @@ import { useState } from "react"
 import Phase0 from "./pages/Phase0";
 import Phase1 from "./pages/Phase1";
 import Phase2 from "./pages/Phase2";
+import Phase3 from "./pages/Phase3";
 
 function App() {
   const [phase, setPhase] = useState<number>(0);
@@ -41,14 +42,19 @@ function App() {
         ?
         <Phase1
           setPhase={setPhase}
+        />
+        : phase === 2
+        ?
+        <Phase2
+          setPhase={setPhase}
           agenda={agenda}
           goal={goal}
           limitTime={limitTime}
           setMeetingContentAll={setMeetingContentAll}
         />
-        : phase === 2
+        : phase === 3
         ?
-        <Phase2
+        <Phase3
           setPhase={setPhase}
           agenda={agenda}
           goal={goal}
